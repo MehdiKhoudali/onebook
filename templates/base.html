@@ -14,7 +14,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
 </head>
 <body>
-
     <style>
         * {
             margin: 0;
@@ -24,30 +23,24 @@
             list-style-type: none;
             font-family: 'Roboto', sans-serif;
         }
-
         a {
             color: inherit;
         }
-
         button {
             align-items: center;
             line-height: 0;
         }
-
         /* home page */
         #essaie {
             background-color: #957DAD;
         }
-
         #essaie:hover {
             background-color: #88729e;
         }
-
         #navbar {
             background-color: white;
             width: 100%;
         }
-
         .hero {
             display: flex;
             justify-content: space-between;
@@ -55,26 +48,22 @@
             height: 70vh;
             align-items: center;
         }
-
         .right {
             width: 100%;
             align-items: center;
             text-align: center !important;
             height: 100%;
-            padding: 100px;
+            padding: 130px;
 
         }
-
         .right * {
             align-items: center !important;
             text-align: center;
             letter-spacing: 1px;
         }
-
         .right h1 {
             font-size: 3rem;
         }
-
         .right p {
             color: gray;
         }
@@ -89,8 +78,6 @@
             width: 50%;
             text-align: center;
         }
-
-
         .hero_about {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -98,11 +85,9 @@
             grid-column-gap: 30px;
             grid-row-gap: 0px;
         }
-
         .hero_about {
             text-align: center;
         }
-
         .last_episodes {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
@@ -111,7 +96,6 @@
             grid-row-gap: 0px;
             text-align: center !important;
         }
-
         .last_episodes img {
             width: 100%;
             height: 99%;
@@ -120,26 +104,30 @@
         .step {
             color: #957DAD;
         }
+        .start {
+            text-align: center;
+            align-items: center;
+            padding: 50px;
+        }
+        .start p {
+            color: gray;
+        }
         @media screen and (max-width:900px) {
-            .left {
-                display: none;
+            .start {
+                padding: 0;
             }
-
             .right {
                 width: 100%;
                 background-position: center;
                 background-size: cover;
                 filter: sepia(2px);
             }
-
             .right h1 {
                 font-size: 2rem;
             }
-
             .hero {
                 height: 90vh;
             }
-
             .hero_about {
                 display: grid;
                 grid-template-columns: 1fr;
@@ -183,6 +171,17 @@
 
     {% block content %}
     {% endblock %}
+
+    <footer class="p-4">
+        <div class="d-flex justify-content-between w-100">
+            <a href="#">ONEBOOK</a>
+            <ul class="d-flex">
+                <li class="mx-2"><a href="#">Conditions</a></li>
+                <li class="mx-2"><a href="#">Politique de confidentialité</a></li>
+            </ul>
+        </div>
+        <p>Crée avec ❤️ par Mehdi_Khoudali et Anas_Elmabrouki,<br>des amis qui vous veulent du bien !</p>
+    </footer>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"

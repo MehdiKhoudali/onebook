@@ -1,43 +1,100 @@
 {% extends 'base.html' %}
 {% load static %}
 
+{% block title %}
+Accueil
+{% endblock %}
+
 {% block content %}
     <section class="hero">
-        <div class="left">
-            <img class="mb-4 rounded-lg md:w-[70%]" src="https://imgs.search.brave.com/bbKKHp_b17v7CiEZwNk7YsKAYhnaBaGyR53Rep1lwi8/rs:fit:1200:1200:1/g:ce/aHR0cHM6Ly9jZG4y/LnBlbmd1aW4uY29t/LmF1L2NvdmVycy9v/cmlnaW5hbC85Nzgw/MjQxMTg0ODM3Lmpw/Zw">
-        </div>
+        <!-- <div class="left">
+            <img class="mb-4 rounded-lg md:w-[70%]"
+                src="https://imgs.search.brave.com/bbKKHp_b17v7CiEZwNk7YsKAYhnaBaGyR53Rep1lwi8/rs:fit:1200:1200:1/g:ce/aHR0cHM6Ly9jZG4y/LnBlbmd1aW4uY29t/LmF1L2NvdmVycy9v/cmlnaW5hbC85Nzgw/MjQxMTg0ODM3Lmpw/Zw">
+        </div> -->
         <div class="right" class="right">
-            <h1>Ameliorez vous grace au livres livres 📚 et à leurs conseils</h1>
-            <p>Des condensés 🔊 audio des conseils des meilleurs livres et une strategie complette pour appliquer leurs conseils dans
-                votre vie personnelle et professionnelle à écouter pendant son travaille </p>
+            <h1>Ameliorez vous grace au livres 📚 et à leurs conseils</h1>
+            <p>Des condensés 🔊 audio des conseils des meilleurs livres et une strategie complette pour appliquer leurs
+                conseils dans
+                votre vie personnelle et professionnelle à écouter pendant ses activités </p>
             <a class="btn btn-outline-secondary border-0 text-white my-2" href="/" id="essaie">60 jours d'essai gratuits</a>
-            <p>Profitez des condensés audio des conseils de livres et une strategie complette pour les mettres en place dans
-                votre vie gratuitement pendant 2 mois ensuite c'est 6.99€/mois.</p>
+            <p>Profitez de Onebook gratuitement pendant 2 mois ensuite ce sera 5.99$/mois.</p>
         </div>
     </section>
     <section class="hero_about mx-5 my-5">
         <div class="mx-0">
             <h1>🤔</h1>
             <h4>C'EST QUOI GLOBALEMENT ?</h4>
-            <p>Onebook est tout simplement une librairie de condensés audio des conseils des differants livres et vous offre avec une strategie complette pour mettre en place les conseils de ses livres.</p>
+            <p>Onebook est tout simplement une librairie de condensés audio des meilleurs livres qui vous resume en audio
+                les conseils de ces livres et vous donne par la suite une strategie complette pour mettre en place leurs
+                conseils dans votre vie personnelle et professionnelle</p>
         </div>
         <div class="mx-0">
             <h1>🤷‍♂️</h1>
             <h4>C'EST POUR QUI ?</h4>
-            <p>Si vous aimez lire mais que par manque de temps ou de motivation, Onebook est fait pour vous, vous pourrez écouter vos livres pendant votre travail, vos séances de sport, avant de dormir, pendant que vous vous relaxez ....</p>
+            <p>Si vous aimez lire mais que par manque de temps ou de motivation, Onebook est fait pour vous, vous pourrez
+                écouter vos livres pendant votre travail, vos séances de sport, avant de dormir, pendant que vous vous
+                relaxez ....</p>
         </div>
         <div class="mx-0">
             <h1>🔧</h1>
             <h4>CA SERT A QUOI ?</h4>
-            <p>C'est simple,Onebook vous permé de gagner du temps, beaucoup de temps, si vous y pensez, lire un livre au complet vous prendrez des semaines sur Onebook, vous écouterez le necessaire dans les livres, le meilleur et le plus interessant. </p>
+            <p>C'est simple,Onebook vous permé de gagner du temps, beaucoup de temps, si vous y pensez, lire un livre au
+                complet vous prendrez des semaines, sur Onebook, vous écouterez le necessaire dans les livres, le meilleur
+                et le plus interessant dans les livres et vous obtiendrez une strategie complette pour mettre en place les
+                conseils de ces livres. </p>
         </div>
     </section>
     <section class="mx-5">
-        <h1>Nos derniers épisodes</h1>
         <div class="last_episodes my-5">
             <img src="https://cdn2.penguin.com.au/covers/original/9780552177528.jpg">
-            <img src="https://imgs.search.brave.com/bbKKHp_b17v7CiEZwNk7YsKAYhnaBaGyR53Rep1lwi8/rs:fit:1200:1200:1/g:ce/aHR0cHM6Ly9jZG4y/LnBlbmd1aW4uY29t/LmF1L2NvdmVycy9v/cmlnaW5hbC85Nzgw/MjQxMTg0ODM3Lmpw/Zw">
-            <img class="rounded-lg shadow-[0_35px_60px_-15px_rgba(0,0,0,50)]" src="https://cdn2.penguin.com.au/covers/original/9781761048197.jpg">
+            <img src="https://m.media-amazon.com/images/I/41lb45LtNWL._SY291_BO1,204,203,200_QL40_ML2_.jpg" alt="">
+            <img
+                src="https://imgs.search.brave.com/bbKKHp_b17v7CiEZwNk7YsKAYhnaBaGyR53Rep1lwi8/rs:fit:1200:1200:1/g:ce/aHR0cHM6Ly9jZG4y/LnBlbmd1aW4uY29t/LmF1L2NvdmVycy9v/cmlnaW5hbC85Nzgw/MjQxMTg0ODM3Lmpw/Zw">
+            <img class="rounded-lg shadow-[0_35px_60px_-15px_rgba(0,0,0,50)]"
+                src="https://cdn2.penguin.com.au/covers/original/9781761048197.jpg">
+        </div>
+    </section>
+    <section class="mx-5">
+        <div class="hero_about my-5">
+            <h1>Pourquoi prendre Onebook ?</h1>
+            <div class="mx-0">
+                <h1 class="step">🧠</h1>
+                <h4>Plus de curlture !</h4>
+                <p>Avec Onebook profitez du contenue et des conseils des meilleurs livres de cet univers.</p>
+            </div>
+            <div class="mx-0">
+                <h1 class="step">⏲️</h1>
+                <h4>Plus de temps !</h4>
+                <p>Avec Onebook, vous n'avez pas à lire tout un livre, nous le ferons pour vous, vous écouterez un condensé audio de vos livres preferés.</p>
+            </div>
+            <div class="mx-0">
+                <h1 class="step">😎</h1>
+                <h4>Une bonne humeur !</h4>
+                <p>Avec Onebook, profitez des livres de developement personnel, profitez de leurs conseils et ameliorez votre vie personnelle et professionnelle.</p>
+            </div>
+        </div>
+    </section>
+    <section class="mx-5">
+        <div class="hero_about my-5">
+            <h1>Vous voulez commencer ? voila 3 étapes :</h1>
+            <div class="mx-0">
+                <h1 class="step">1</h1>
+                <h4>Creer son compte</h4>
+                <p>Pour commencer vous devrez creer votre compte, profiter de l'offre d'essai gratuit de 2 mois ensuite vous
+                    connecter et vous rendre sur le catalogue.</p>
+            </div>
+            <div class="mx-0">
+                <h1 class="step">2</h1>
+                <h4>Choisir son livre</h4>
+                <p>Maintenant que vous etes sur le catalogue, choisissez votre livre !! choisissez celui qui vous inspire le
+                    plus ensuite posez vous, sur un canapé, un lit ou la ou vous vous sentez le mieux !</p>
+            </div>
+            <div class="mx-0">
+                <h1 class="step">3</h1>
+                <h4>Ecouter le livre !!</h4>
+                <p>Enfin !! vous en etes à la derniere etape, écouter son livre, mettre ses écouteur et suivre le livre, une
+                    fois fini vous retrouverez une strategie complette pour mettre en place les conseils du livre.</p>
+            </div>
         </div>
     </section>
 {% endblock %}

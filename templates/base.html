@@ -7,28 +7,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Onebook</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/reset.css' %}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            text-decoration: none;
-            list-style-type: none;
-        }
-        a {
-            color: inherit;
-        }
-        #essaie {
-            background-color: #957DAD;
-        }
-    </style>
-    <nav class="navbar navbar-expand-md navbar-light bg-transparent px-4">
+    <nav class="navbar navbar-expand-md navbar-light bg-white px-4" id="navbar">
         <a class="navbar-brand" href="#">onebook</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04"
+            aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarsExample04">
@@ -46,7 +36,8 @@
                 <div>
                     <a class="btn btn-outline-secondary my-2" href="/" id="catalogue">Catalogue</a>
                     <a class="btn btn-outline-secondary my-2" href="/" id="conexion">Connexion</a>
-                    <a class="btn btn-outline-secondary border-0 text-white my-2" href="/" id="essaie">60 jours d'essai gratuits</a>
+                    <a class="btn btn-outline-secondary border-0 text-white my-2" href="/" id="essaie">60 jours d'essai
+                        gratuits</a>
                 </div>
             </form>
         </div>

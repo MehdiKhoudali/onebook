@@ -118,7 +118,17 @@
         a:hover {
             color: inherit;
         }
+        .creer {
+            font-size: 12px;
+            color: gray;
+        }
+        .steps_container {
+            text-align: center;
+        }
         @media screen and (max-width:900px) {
+            .footer {
+                padding: 10px;
+            }
             .start {
                 padding: 15px;
             }
@@ -145,7 +155,8 @@
                 grid-row-gap: 10px;
             }
             .right {
-                padding: 50px;
+                padding: 30px;
+                padding-top: 100px;
             }
         }
     </style>
@@ -181,15 +192,15 @@
     {% block content %}
     {% endblock %}
 
-    <footer class="p-4">
+    <footer class="p-4 footer">
         <div class="d-flex justify-content-between w-100">
             <a href="#">ONEBOOK</a>
             <ul class="d-flex">
                 <li class="mx-2 text-gray"><a href="#">Conditions</a></li>
-                <li class="mx-2 text-gray"><a href="#">Politique de confidentialité</a></li>
+                <li class="mx-2 text-gray"><a href="#">confidentialité</a></li>
             </ul>
         </div>
-        <p>Crée avec ❤️ par Mehdi_Khoudali et Anas_Elmabrouki,<br>des amis qui vous veulent du bien !</p>
+        <p class="creer">Crée avec ❤️ par Mehdi_Khoudali et Anas_Elmabrouki,<br>des amis qui vous veulent du bien !</p>
     </footer>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"

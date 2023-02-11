@@ -48,16 +48,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'vercel_app.wsgi.app'
 
-DATABASES = {
-       'default': {
-       'ENGINE': 'django.db.backends.postgresql',
-       'NAME': '',
-       'USER': 'postgres',
-       'PASSWORD': 'q4ZyaMQQ2j58HS8Nh6ke',
-       'HOST': 'containers-us-west-197.railway.app',
-       'PORT': '6873',
-   }
-}
+DATABASES = {}
 
 AUTH_PASSWORD_VALIDATORS = [
     {

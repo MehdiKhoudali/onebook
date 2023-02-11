@@ -30,7 +30,6 @@
             align-items: center;
             line-height: 0;
         }
-        /* home page */
         #essaie {
             background-color: #957DAD;
         }
@@ -42,24 +41,24 @@
             width: 100%;
         }
         .hero {
-            display: flex;
-            justify-content: space-between;
-            width: 100%;
-            height: 70vh;
-            align-items: center;
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          grid-template-rows: 1fr;
+          grid-column-gap: 10px;
+          grid-row-gap: 0px;
+          padding: 60px;
+          align-items: center !important;
+        }
+        .left {
+          width: 65%;
         }
         .right {
-            width: 100%;
-            align-items: center;
-            text-align: center !important;
-            height: 100%;
-            padding: 130px;
-
+            align-items: center !important;
         }
         .right * {
             align-items: center !important;
-            text-align: center;
             letter-spacing: 1px;
+            vertical-align: middle;
         }
         .right h1 {
             font-size: 3rem;
@@ -68,52 +67,14 @@
             color: gray;
         }
         .left {
-            width: 50%;
             height: 100%;
             align-items: center;
             text-align: center;
         }
-
         .left img {
-            width: 50%;
-            text-align: center;
-        }
-        .hero_about {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            grid-template-rows: 1fr;
-            grid-column-gap: 30px;
-            grid-row-gap: 0px;
-        }
-        .hero_about {
-            text-align: center;
-        }
-        .last_episodes {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            grid-template-rows: 1fr;
-            grid-column-gap: 30px;
-            grid-row-gap: 0px;
-            text-align: center !important;
-        }
-        .last_episodes img {
             width: 100%;
-            height: 99%;
-            text-align: center;
-        }
-        .step {
-            color: #957DAD;
-        }
-        .start {
-            text-align: center;
             align-items: center;
-            padding: 50px;
-        }
-        .start p {
-            color: gray;
-        }
-        .text-gray {
-            color: gray;
+            text-align: center;
         }
         a:hover {
             color: inherit;
@@ -122,41 +83,185 @@
             font-size: 12px;
             color: gray;
         }
-        .steps_container {
-            text-align: center;
+        .start {
+          text-align: center;
+        }
+        .footer a {
+          color: gray;
+        }
+        .start p {
+          color: gray;
+        }
+        .about {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          grid-template-rows: 1fr;
+          grid-column-gap: 10px;
+          grid-row-gap: 0px;
+          padding: 150px;
+          align-items: center !important;
+        }
+        .left_about h1 {
+          font-size: 3rem;
+          letter-spacing: 1px;
+        }
+        .left_about p {
+          color: gray;
+        }
+        .left_about {
+          width: 90%;
+        }
+        .right_about {
+          width: 65%;
+        }
+        .right_about img {
+          width: 100%;
+        }
+        .left_about h2 {
+          font-size: 3rem;
+        }
+        .comment_header {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        }
+        .name_comment:hover {
+          color: gray;
+        }
+        .comments {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          grid-template-rows: repeat(2, 1fr);
+          grid-column-gap: 0px;
+          grid-row-gap: 0px;
+          padding: 60px;
+        }
+        .logo_comment {
+          background: #957DAD;
+          width: 50px;
+          height: 50px;
+          align-items: center !important;
+          text-align: center;
+          border-radius: 50%;
+        }
+        .logo_comment i {
+          height: 100%;
+          align-items: center;
+        }
+        .name_comment {
+          color: gray;
+        }
+        .comment {
+          display: flex;
+          flex-direction: column;
+          width: 80%;
+        }
+        .comment_content {
+          color: gray;
+          letter-spacing: 1.5px;
+          font-family: serif;
+          font-size: 16px;
+        }
+        .pass {
+          padding: 60px;
+        }
+        .book_landing {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          grid-template-rows: repeat(2, 1fr);
+          grid-column-gap: 15px;
+          grid-row-gap: 15px;
+          padding: 20px;
+        }
+        .book_landing img {
+          width: 100%;
         }
         @media screen and (max-width:900px) {
+          .start h1 {
+              font-size: 2rem;
+          }
+          .right {
+            padding-left: 0;
+          }
+          .right h1 {
+              font-size: 2rem;
+          }
+          .left img {
+            width: 100%;
+          }
+          .left {
+            display: none;
+          }
+          .right {
+            text-align: left;
+            align-items: center;
+          }
+          .hero {
+              display: grid;
+              grid-template-columns: 1fr;
+              grid-template-rows: repeat(1, 1fr);
+              grid-column-gap: 0px;
+              grid-row-gap: 10px;
+              padding: 20px;
+          }
+          .about {
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: repeat(1, 1fr);
+            grid-column-gap: 0px;
+            grid-row-gap: 15px;
+            padding: 20px;
+            text-align: center;
+            align-items: center !important;
+          }
+          .left_about {
+            width: 100%;
+            text-align: left;
+          }
+          .right_about {
+            /* width: 100%;
+            text-align: center;
+            align-items: center; */
+            display: none;
+          }
+          .right_about img {
+            width: 50%;
+          }
+        }
+        @media screen and (max-width:600px) {
             .footer {
                 padding: 10px;
+            }
+            .comments {
+              display: grid;
+              grid-template-columns: 1fr;
+              grid-template-rows: repeat(2, 1fr);
+              grid-column-gap: 0px;
+              grid-row-gap: 0px;
+              padding: 20px;
+            }
+            .comment {
+              width: 100%;
+              padding: 10px;
+            }
+            .comment_content {
+              font-size: 12px;
+            }
+            .logo_comment {
+              width: 30px;
+              height: 30px;
+            }
+            .name_comment {
+              font-size: 13px;
             }
             .start {
                 padding: 15px;
             }
-            .start h1 {
-                font-size: 2rem;
+            .left_about h1 {
+              font-size: 2rem;
             }
-            .right {
-                width: 100%;
-                background-position: center;
-                background-size: cover;
-                filter: sepia(2px);
-            }
-            .right h1 {
-                font-size: 2rem;
-            }
-            .hero {
-                height: 90vh;
-            }
-            .hero_about {
-                display: grid;
-                grid-template-columns: 1fr;
-                grid-template-rows: repeat(2, 1fr);
-                grid-column-gap: 5px;
-                grid-row-gap: 10px;
-            }
-            .right {
-                padding: 30px;
-                padding-top: 100px;
+            .pass {
+              padding: 20px;
             }
         }
     </style>

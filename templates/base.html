@@ -46,11 +46,11 @@
           grid-template-rows: 1fr;
           grid-column-gap: 10px;
           grid-row-gap: 0px;
-          padding: 60px;
+          padding: 20px;
           align-items: center !important;
         }
         .left {
-          width: 65%;
+          width: 95%;
         }
         .right {
             align-items: center !important;
@@ -67,7 +67,7 @@
             color: gray;
         }
         .left {
-            height: 100%;
+            height: 130%;
             align-items: center;
             text-align: center;
         }
@@ -98,11 +98,11 @@
         .about {
           display: grid;
           grid-template-columns: repeat(2, 1fr);
-          grid-template-rows: 1fr;
+          grid-template-rows: 0fr;
           grid-column-gap: 10px;
           grid-row-gap: 0px;
-          padding: 100px;
-          text-align: center;
+          padding: 120px;
+          text-align: center !important;
           align-items: center !important;
         }
         .left_about {
@@ -119,10 +119,10 @@
           width: 90%;
         }
         .right_about {
-          width: 65%;
+          width: 97%;
         }
         .right_about img {
-          width: 100%;
+          width: 80%;
         }
         .left_about h1 {
           font-size: 3rem;
@@ -184,6 +184,19 @@
         .book_landing img {
           width: 100%;
         }
+        .trusted_entreprise {
+            text-align: center;
+        }
+        .trusted_entreprises {
+            display: flex;
+            justify-content: center;
+        }
+        .trusted_entreprises img {
+            width: 15%;
+            filter: grayscale(1);
+            margin-right: 40px;
+            margin-left: 40px;
+        }
         @media screen and (max-width:900px) {
           .start h1 {
               font-size: 2rem;
@@ -240,17 +253,21 @@
             .footer {
                 padding: 10px;
             }
+            .containfooter {
+                flex-direction: column;
+                margin-top: 15px;
+            }
             .comments {
               display: grid;
               grid-template-columns: 1fr;
               grid-template-rows: repeat(2, 1fr);
               grid-column-gap: 0px;
               grid-row-gap: 0px;
-              padding: 20px;
+              padding: 15px;
+              padding-right: 20px;
             }
             .comment {
               width: 100%;
-              padding: 10px;
             }
             .comment_content {
               font-size: 12px;
@@ -265,8 +282,14 @@
             .start {
                 padding: 15px;
             }
+            h1 {
+                font-size: 2rem;
+            }
             .pass {
-              padding: 20px;
+              padding: 15px;
+            }
+            .pass {
+                font-size: 2rem;
             }
             .book_landing {
               padding: 20px;
@@ -305,12 +328,13 @@
     {% block content %}
     {% endblock %}
 
-    <footer class="p-4 footer">
-        <div class="d-flex justify-content-between w-100">
+    <footer class="p-2 footer">
+        <div class="d-flex justify-content-between w-100 containfooter">
             <a href="#">ONEBOOK</a>
             <ul class="d-flex">
-                <li class="mx-2 text-gray"><a href="#">Conditions</a></li>
-                <li class="mx-2 text-gray"><a href="#">confidentialité</a></li>
+                <li class="mx-1 text-gray"><a href="#">conexion</a></li>
+                <li class="mx-1 text-gray"><a href="#">Conditions</a></li>
+                <li class="mx-1 text-gray"><a href="#">confidentialité</a></li>
             </ul>
         </div>
         <p class="creer">Crée avec ❤️ par Mehdi_Khoudali et Anas_Elmabrouki,<br>des amis qui vous veulent du bien !</p>

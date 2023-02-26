@@ -1,7 +1,8 @@
 from pathlib import Path
+import os
 
 BASE_DIR = Path(__file__).resolve().parent.parent
-
+a
 SECRET_KEY = 'django-insecure-=cldztbc4jg&xl0!x673!*v2_=p$$eu)=7*f#d0#zs$44xx-h^'
 
 DEBUG = True
@@ -15,7 +16,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'example'
+    'example',
+    #'authentification',
 ]
 
 MIDDLEWARE = [
@@ -48,7 +50,16 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'vercel_app.wsgi.app'
 
-DATABASES = {}
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': os.environ.get('PGDATABASE'),
+        'USER': os.environ.get('PGUSER'),
+        'PASSWORD': os.environ.get('PGPASSWORD'),
+        'HOST': os.environ.get('PGHOST'),
+        'PORT': os.environ.get('PGPORT'),
+    }
+}
 
 AUTH_PASSWORD_VALIDATORS = [
     {
@@ -65,7 +76,7 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-LANGUAGE_CODE = 'fr-fr'
+LANGUAGE_CODE = 'en-us'
 
 TIME_ZONE = 'UTC'
 
@@ -82,3 +93,11 @@ STATICFILES_DIRS = [
 STATIC_ROOT = "/static"
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+SITE_ID = 1
+
+LOGIN_REDIRECT_URL = '/'
+
+MEDIA_URL = '/media/'
+
+MEDIA_ROOT = BASE_DIR / 'media'

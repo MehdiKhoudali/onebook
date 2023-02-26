@@ -23,7 +23,7 @@ Accueil
       <div class="left_about">
         <h1 class="about_h1">Lisez, écoutez, appliquez.</h1>
         <p>Chaque semaine, onebook publie un livre parmis les "BEST SELLERS" en condensé audio et par la suite vous fourni une strategie écrite et en audio pour appliquer les conseils de ces livres dans votre vie.</p>
-        <a class="btn btn-outline-secondary border-0 text-white my-2" href="/" id="essaie">voir le catalogue</a>
+        <a class="btn btn-outline-secondary border-0 text-white my-2" href="" id="essaie">voir le catalogue</a>
       </div>
       <div class="right_about">
         <img width="300px" src="https://cdn.designblognews.com/wp-content/uploads/2018/06/books-lineart-icons-png-free-png-and-icons-downloads-1528240579gn48k.jpg" charset="utf-8">
@@ -83,8 +83,12 @@ Accueil
         <h1>Pret à commencer a profiter des meilleurs livres<br>de cet univers sans meme avoir à les lire ?</h1>
         <p>C'est maintenant ou jamais !!</p>
         <div class="call_action my-2">
-            <a class="btn btn-outline-secondary my-2" href="/" id="conexion">se connecter</a>
-            <a class="btn btn-outline-secondary border-0 text-white my-2" href="/" id="essaie">60 jours d'essai gratuits</a>
+            {% if user.is_authenticated %}
+              <button type="button" class="btn my-2 bg-transparent btn btn-danger text-danger"><a href="">Se deconnecter</a></button>
+            {% else %}
+              <a class="btn btn-outline-secondary my-2" href="/login" id="conexion">Connexion</a>
+            {% endif %}
+            <a class="btn btn-outline-secondary border-0 text-white my-2" href="/signup" id="essaie">60 jours d'essai gratuits</a>
         </div>
         <p>Profitez de Onebook gratuitement pendant 2 mois, ensuite ce sera 5.99$/mois !</p>
     </section>

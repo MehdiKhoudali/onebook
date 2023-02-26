@@ -86,7 +86,7 @@
         .start {
           text-align: center;
         }
-        .footer a {
+        .footer-link {
           color: gray;
         }
         .start p {
@@ -240,9 +240,6 @@
             text-align: left;
           }
           .right_about {
-            /* width: 100%;
-            text-align: center;
-            align-items: center; */
             display: none;
           }
           .right_about img {
@@ -254,8 +251,33 @@
             top: 60px;
             left: 20px;
             margin-bottom: 50px;
-            z-index: 200;
             width: 97%;
+        }
+        .auth_form {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .auth_form * {
+            margin: 15px;
+            padding: 15px;
+            width: 40%;
+        }*
+        .auth_form input {
+            outline: none;
+        }
+        .auth_h1 {
+            color: gray;
+            padding: 0;
+        }
+        .auth_form a {
+            color: gray;
+            text-decoration: underline;
+            padding: 0;
+        }
+        .footer_link {
+            text-decoration: underline;
         }
         @media screen and (max-width:600px) {
             .footer {
@@ -302,13 +324,18 @@
             .book_landing {
               padding: 20px;
             }
+            .auth_form * {
+                margin: 15px;
+                padding: 15px;
+                width: 85%;
+            }
+            .footer-link {
+                margin-top: 15px;
+            }
         }
     </style>
-    <div class="alert alert-success" role="alert">
-        Onebook is currently in development !!!!
-    </div>
     <nav class="navbar navbar-expand-md navbar-light bg-white px-4" id="navbar">
-        <a class="navbar-brand" href="#">onebook</a>
+        <a class="navbar-brand" href="/">onebook</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04"
             aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -326,10 +353,13 @@
             </ul>
             <form class="form-inline my-md-0 px-0">
                 <div>
-                    <a class="btn btn-outline-secondary my-2" href="/" id="catalogue">Catalogue</a>
-                    <a class="btn btn-outline-secondary my-2" href="/" id="conexion">Connexion</a>
-                    <a class="btn btn-outline-secondary border-0 text-white my-2" href="/" id="essaie">60 jours d'essai
-                        gratuits</a>
+                    <a class="btn btn-outline-secondary my-2" href="/catalogue" id="catalogue">Catalogue</a>
+                    {% if user.is_authenticated %}
+                        <button type="button" class="btn my-2 bg-transparent btn btn-danger text-danger"><a href="">Se deconnecter</a></button>
+                    {% else %}
+                        <a class="btn btn-outline-secondary my-2" href="/login" id="conexion">Connexion</a>
+                    {% endif %}
+                    <a class="btn btn-outline-secondary border-0 text-white my-2" href="/signup" id="essaie">60 jours d'essai gratuits</a>
                 </div>
             </form>
         </div>
@@ -338,13 +368,17 @@
     {% block content %}
     {% endblock %}
 
-    <footer class="p-2 footer">
+    <footer class="p-4 footer">
         <div class="d-flex justify-content-between w-100 containfooter">
             <a href="#">ONEBOOK</a>
             <ul class="d-flex">
-                <li class="mx-1 text-gray"><a href="#">conexion</a></li>
-                <li class="mx-1 text-gray"><a href="#">Conditions</a></li>
-                <li class="mx-1 text-gray"><a href="#">confidentialité</a></li>
+                {% if user.is_authenticated %}
+                    <a href="" class="mx-0 text-danger border-0 footer-link footer_link">Se deconnecter</a>
+                {% else %}
+                    <a class="mx-2 text-gray footer-link footer_link" href="" id="conexion">Connexion</a>
+                {% endif %}
+                <li class="mx-2 text-gray footer-link footer_link"><a href="#">Conditions</a></li>
+                <li class="mx-2 text-gray footer-link footer_link"><a href="#">Confidentialité</a></li>
             </ul>
         </div>
         <p class="creer">Crée avec ❤️ par Mehdi_Khoudali et Anas_Elmabrouki,<br>des amis qui vous veulent du bien !</p>

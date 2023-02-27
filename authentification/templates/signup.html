@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Signup
+{% endblock %}
+
+{% block content %}
+<form action="/signup/" method="post" class="auth_form">
+	<h1 class="auth_h1">Creer son compte</h1>
+	{% csrf_token %}
+	<input class="username_input" name="username" placeholder="Votre Nom : ">
+	<input class="email_input" name="email" placeholder="Votre Email : ">
+	<input class="password_input" type="password" name="password" placeholder="Votre Mot de passe : ">
+	<button class="auth_button btn btn-outline-secondary text-white border-0" type="submit" id="essaie">creer son compte</button>
+	<a href="{% url 'login' %}">j'ai deja un compte</a>
+</form>
+{% endblock %}

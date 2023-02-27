@@ -1,11 +1,11 @@
-# example/urls.py
-from example.views import index, signup, logoutPage, loginPage, catalogue
+from django.contrib import admin
 from django.urls import path, include
+from .views import catalogue, signup, loginPage, logoutPage
+
 
 urlpatterns = [
-    path('', index, name="home"),
     path('signup/', signup, name="signup"),
-    path('logout/', logoutPage, name="logout"),
     path('login/', loginPage, name="login"),
+    path('logout/', logoutPage, name="logout"),
     path('catalogue/', catalogue, name="catalogue")
 ]

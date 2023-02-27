@@ -1,5 +1,6 @@
-from django.db import models
 from django.contrib.auth.models import AbstractUser
+from django.db import models
+
 
 categories = [
 	('DEVEVELOPPEMENT_PERSONNEL', 'développement personnel'),
@@ -20,7 +21,3 @@ class Book(models.Model):
     youtube_link = models.URLField()
     notes = models.TextField()
 
-
-
-class Shopper(AbstractUser):
-    pass

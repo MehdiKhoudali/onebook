@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Votre compte
+{% endblock %}
+
+{% block content %}
+<div class="user_account_container">
+	<form action="" method="post" class="auth_form">
+		<h1 class="auth_h1">Modifiez vos informations</h1>
+		{% csrf_token %}
+		<input class="username_input" name="username_update" placeholder="Votre Nouveau Nom : ">
+		<input class="email_input" name="email_update" placeholder="Votre Nouvelle Adresse Email : ">
+		<input class="password_input" type="password" name="password_udate" placeholder="Votre Nouveau Mot De Passe : ">
+		<button class="auth_button btn btn-outline-secondary text-white border-0" type="submit" id="essaie">Enregistrer</button>
+	</form>
+</div>
+{% endblock %}

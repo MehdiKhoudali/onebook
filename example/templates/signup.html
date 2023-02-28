@@ -9,8 +9,8 @@ Signup
 <form method="post" action="" class="auth_form">
 	{% csrf_token %}
 	<h1 class="auth_h1">S'inscrire</h1>
-	<input name="username" placeholder="votre nom d'utilisateur">
-	<input name="password" placeholder="votre mot de passe" type="password">
+	<input name="username" placeholder="votre email : ">
+	<input name="password" placeholder="votre mot de passe : " type="password">
 	<button type="submit" class="auth_btn p-4">s'inscrire</button>
 	<a href="{% url 'login' %}">J'ai deja un compte</a>
 </form>

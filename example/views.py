@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import get_user_model, login, logout, authenticate
 from example.models import Book
+from django.core.mail import send_mail
 
 User = get_user_model()
 

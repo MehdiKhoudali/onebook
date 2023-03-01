@@ -19,12 +19,12 @@ Catalogue
 <br>
 <section class="book_landing my-5">
 	<ul id="myUL" class="book_landing">
-	  {% for book in books %}
-      	<li>
-      		<a>{{book.title}}</a>
-      		<img id="book_li" class="book_img" src="{{book.thumbnail.url}}">
-      	</li>
-      {% endfor %}
+    {% for book in books %}
+      <li>
+      	<a class="text-white d-none">{{book.title}}</a>
+      	<img id="book_li" class="book_img" src="{{book.thumbnail.url}}">
+      </li>
+    {% endfor %}
 	</ul> 
 </section>
 <script>

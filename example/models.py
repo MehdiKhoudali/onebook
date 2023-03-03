@@ -9,7 +9,7 @@ categories = [
 ]
 
 class Book(models.Model):
-    thumbnail = models.ImageField(upload_to='book_thumbnails')
+    thumbnail = models.URLField(null=True)
     title = models.CharField(max_length=100)
     description = models.TextField()
     categories = models.CharField(max_length=50, choices=categories)

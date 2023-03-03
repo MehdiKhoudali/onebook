@@ -17,12 +17,14 @@ Catalogue
 </section>
 <br>
 <br>
-<section class="book_landing my-5">
+<section class="my-5">
 	<ul id="myUL" class="book_landing">
     {% for book in books %}
       <li>
       	<a class="text-white d-none">{{book.title}}</a>
-      	<img id="book_li" class="book_img" src="{{book.thumbnail.url}}">
+        {% if book %}
+        <a href="{% url 'book_detail' book.id %}"><img id="book_li" class="book_img" src="{{book.thumbnail.url}}"></a>
+        {% endif %}
       </li>
     {% endfor %}
 	</ul> 

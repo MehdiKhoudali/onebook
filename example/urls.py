@@ -1,5 +1,5 @@
 # example/urls.py
-from example.views import index, signup, logoutPage, loginPage, catalogue
+from example.views import index, signup, logoutPage, loginPage, catalogue, book_detail
 from django.urls import path, include
 
 urlpatterns = [
@@ -7,5 +7,6 @@ urlpatterns = [
     path('signup/', signup, name="signup"),
     path('logout/', logoutPage, name="logout"),
     path('login/', loginPage, name="login"),
-    path('catalogue/', catalogue, name="catalogue")
+    path('catalogue/', catalogue, name="catalogue"),
+    path('book/<int:pk>/', book_detail, name='book_detail'),
 ]

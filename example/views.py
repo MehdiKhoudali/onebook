@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth import get_user_model, login, logout, authenticate
 from example.models import Book
 from django.core.mail import send_mail
@@ -27,12 +27,9 @@ def loginPage(request):
             return redirect('home')
     return render(request, 'login.html')
 
-
 def logoutPage(request):
     logout(request)
     return redirect('home')
-
-
 
 def catalogue(request):
     book = Book.objects.all()
@@ -40,3 +37,10 @@ def catalogue(request):
         'books': book
     }
     return render(request, 'catalogue.html', context)
+
+def book_detail(request, pk):
+    book = get_object_or_404(Book, pk=pk)
+    context = {
+        'book': book
+    }
+    return render(request, 'book.html', context)

@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block title %}
+{{book.title}}
+{% endblock %}
+
+{% block content %}
+<section class="book_section">
+	<div class="left_book">
+		<img class="book_page_img" src="{{book.thumbnail.url}}">
+	</div>
+	<div class="middle_book">
+		<h1>{{book.title}}</h1>
+		<h6 class="book_description">{{book.description}}</h6>
+		<p>AUTHEUR : {{book.author}}</p>
+		<p>Durée : {{book.duration}}</p>
+		<p><a class="book_categorie" href="{% url 'catalogue' %}">categorie <i class="fa fa-angle-right"></i></a> {{book.categories}}</p>
+		<div class="likes">
+			<i class="fa fa-heart"></i>
+			<i class="fa fa-heart"></i>
+			<i class="fa fa-heart"></i>
+			<i class="fa fa-heart"></i>
+			<i class="fa fa-heart"></i>
+		</div>
+		<p class="pub_date">Épisode publié le : {{book.date_upload}}</p>
+	</div>
+	<div class="right_book">
+		<button class="btn btn-outline-secondary my-2"><a href="#">écouter l'episode</a></button>
+		<button class="btn btn-outline-secondary my-2"><a href="{{book.youtube_link}}">regarder en vidéo</a></button>
+		<button class="btn btn-outline-secondary my-2"><a href="#">se procurer l'episode en Ebook</a></button>
+		<button class="btn btn-outline-secondary my-2"><a href="#">Voir les notes</a></button>
+		<hr>
+		<button class="btn btn-outline-secondary my-2" id="essaie"><a href="{{book.amazon_link}}" class="text-white">acheter le livre sur amazon</a></button>
+	</div>
+</section>
+<section>
+	
+</section>
+{% endblock %}

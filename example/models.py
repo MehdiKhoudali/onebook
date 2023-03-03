@@ -9,7 +9,6 @@ categories = [
 ]
 
 class Book(models.Model):
-    id = models.AutoField(primary_key=True)
     thumbnail = models.ImageField(upload_to='book_thumbnails')
     title = models.CharField(max_length=100)
     description = models.TextField()
@@ -19,7 +18,8 @@ class Book(models.Model):
     amazon_link = models.URLField()
     youtube_link = models.URLField()
     notes = models.TextField()
-
+    ebook_link = models.URLField(null=True)
+    date_upload = models.CharField(max_length=300, null=True)
 
 
 class Shopper(AbstractUser):

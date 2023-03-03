@@ -23,7 +23,7 @@ Catalogue
       <li>
       	<a class="text-white d-none">{{book.title}}</a>
         {% if book %}
-        <a href="{% url 'book_detail' book.id %}"><img id="book_li" class="book_img" src="{{book.thumbnail.url}}"></a>
+        <a href="{% url 'book_detail' book.id %}"><img id="book_li" class="book_img" src="{{book.thumbnail}}"></a>
         {% endif %}
       </li>
     {% endfor %}

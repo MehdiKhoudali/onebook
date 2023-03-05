@@ -3,6 +3,7 @@ from django.contrib.auth import get_user_model, login, logout, authenticate
 from example.models import Book, Comment
 from django.core.mail import send_mail
 from .forms import CommentForm
+from django.contrib import messages
 
 User = get_user_model()
 
@@ -64,3 +65,12 @@ def book_detail(request, pk):
 
 def conditions(request):
     return render(request, 'conditions.html')
+
+def delete_comment(request, comment_id):
+    comment = get_object_or_404(Comment, id=comment_id)
+    if request.user == comment.user:
+        comment.delete()
+        messages.success(request, 'Comment deleted.')
+    else:
+        messages.error(request, 'You do not have permission to delete this comment.')
+    return redirect('book_detail', pk=comment.book.pk)

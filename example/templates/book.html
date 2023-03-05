@@ -25,12 +25,15 @@
 		<p class="pub_date">Épisode publié le : {{book.date_upload}}</p>
 	</div>
 	<div class="right_book">
-		<button class="btn btn-outline-secondary my-2"><a href="#">écouter l'episode</a></button>
+		<button class="btn btn-outline-secondary my-2"><a href="#episode">écouter l'episode</a></button>
 		<button class="btn btn-outline-secondary my-2"><a href="#">se procurer l'episode en Ebook</a></button>
-		<button class="btn btn-outline-secondary my-2"><a href="#">Voir les notes</a></button>
+		<button class="btn btn-outline-secondary my-2"><a href="#notes">Voir les notes</a></button>
 		<hr>
 		<button class="btn btn-outline-secondary my-2" id="essaie"><a href="{{book.amazon_link}}" class="text-white">acheter le livre sur amazon</a></button>
 	</div>
+</section>
+<section class="youtube_video" id="episode">
+	<iframe src="{{book.youtube_link}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 </section>
 <section class="comments_section">
 	<div class="add_comments my-4">
@@ -45,21 +48,27 @@
 	  	<h2 class="my-4">Commentaires</h2>
   		{% for comment in comments %}
 	    	<div class="my-4">
-	      		<strong>{{ comment.user.username }} | {{comment.created_at}}</strong>
-	      		<p>{{ comment.text }}</p>
+	      		<span class="my-2">{{ comment.user.username }} | publié le : {{comment.created_at}}</span>
+	      		<p class="my-2">{{ comment.text }}</p>
+	      		{% if request.user == comment.user %}
+			      <form method="post" action="{% url 'delete_comment' comment.id %}">
+			        {% csrf_token %}
+			        <button class="delete_comment" type="submit">suprimer le commentaire</button>
+			      </form>
+			    {% endif %}
 	    	</div>
   		{% empty %}
-    		<p>Pas de commentaire</p>
+    		<p>Pas de commentaire pour l'instant</p>
   		{% endfor %}
 	</div>
 </section>
-<section class="book_under_notes">
+<section class="book_under_notes" id="notes">
 	<div class="me_book_review">
 		<img src="https://pbs.twimg.com/profile_images/1611844886273163265/zzI_v0pO_400x400.jpg">
 		<p>{{book.my_review}}</p>
 	</div>
 	<div class="notes_book">
-		<h1>Mes notes : </h1>
+		<h1>Notes de Mehdi </h1>
 		<hr>
 		<p>{{book.notes}}</p>
 	</div>

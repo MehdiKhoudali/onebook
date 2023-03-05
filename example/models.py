@@ -24,3 +24,10 @@ class Book(models.Model):
 
 class Shopper(AbstractUser):
     pass
+
+
+class Comment(models.Model):
+    user = models.ForeignKey(Shopper, on_delete=models.CASCADE)
+    book = models.ForeignKey(Book, on_delete=models.CASCADE, related_name='comments')
+    text = models.TextField()
+    created_at = models.DateTimeField(auto_now_add=True)

@@ -1,7 +1,8 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth import get_user_model, login, logout, authenticate
-from example.models import Book
+from example.models import Book, Comment
 from django.core.mail import send_mail
+from .forms import CommentForm
 
 User = get_user_model()
 
@@ -40,7 +41,26 @@ def catalogue(request):
 
 def book_detail(request, pk):
     book = get_object_or_404(Book, pk=pk)
+    comments = Comment.objects.filter(book=book)
+
+    if request.method == 'POST':
+        form = CommentForm(request.POST)
+        if form.is_valid():
+            comment = form.save(commit=False)
+            comment.user = request.user
+            comment.book = book
+            comment.save()
+            form = CommentForm()  # reset the form for a new comment
+    else:
+        form = CommentForm()
+
     context = {
-        'book': book
+        'book': book,
+        'comments': comments,
+        'form': form,
     }
     return render(request, 'book.html', context)
+
+
+def conditions(request):
+    return render(request, 'conditions.html')

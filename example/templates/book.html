@@ -32,6 +32,27 @@
 		<button class="btn btn-outline-secondary my-2" id="essaie"><a href="{{book.amazon_link}}" class="text-white">acheter le livre sur amazon</a></button>
 	</div>
 </section>
+<section class="comments_section">
+	<div class="add_comments my-4">
+		<h2 class="my-4">Ajouter un commentaire</h2>
+  		<form method="post">
+    		{% csrf_token %}
+    		{{ form.as_p }}
+    		<button type="submit">Publier</button>
+ 		</form>
+	</div>
+	<div class="commentaires my-4">
+	  	<h2 class="my-4">Commentaires</h2>
+  		{% for comment in comments %}
+	    	<div class="my-4">
+	      		<strong>{{ comment.user.username }} | {{comment.created_at}}</strong>
+	      		<p>{{ comment.text }}</p>
+	    	</div>
+  		{% empty %}
+    		<p>Pas de commentaire</p>
+  		{% endfor %}
+	</div>
+</section>
 <section class="book_under_notes">
 	<div class="me_book_review">
 		<img src="https://pbs.twimg.com/profile_images/1611844886273163265/zzI_v0pO_400x400.jpg">

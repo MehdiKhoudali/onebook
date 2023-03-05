@@ -1,5 +1,5 @@
 # example/urls.py
-from example.views import index, signup, logoutPage, loginPage, catalogue, book_detail
+from example.views import index, signup, logoutPage, loginPage, catalogue, book_detail, conditions
 from django.urls import path, include
 
 urlpatterns = [
@@ -9,4 +9,5 @@ urlpatterns = [
     path('login/', loginPage, name="login"),
     path('catalogue/', catalogue, name="catalogue"),
     path('book/<int:pk>/', book_detail, name='book_detail'),
+    path('conditions/', conditions, name="conditions")
 ]

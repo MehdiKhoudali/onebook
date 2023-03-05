@@ -20,7 +20,7 @@ class Book(models.Model):
     notes = models.TextField()
     ebook_link = models.URLField(null=True)
     date_upload = models.CharField(max_length=300, null=True)
-
+    my_review = models.TextField(null=True)
 
 class Shopper(AbstractUser):
     pass

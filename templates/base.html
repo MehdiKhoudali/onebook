@@ -203,6 +203,13 @@
           .start h1 {
               font-size: 2rem;
           }
+          .me_book_review {
+                display: flex;
+                align-items: center;
+                padding: 0px;
+                justify-content: space-between;
+                width: 100% !important;
+            }
           .right {
             padding-left: 0;
           }
@@ -437,12 +444,59 @@
         .book_page_img {
             width: 80%
         }
+        .book_under_notes {
+            padding: 60px;
+        }
+        .me_book_review {
+            display: flex;
+            align-items: center;
+            padding: 0px;
+            width: 50%;
+        }
+        .me_book_review img {
+            border-radius: 50%;
+            margin: 30px;
+        }
+        .me_book_review p {
+            color: gray;
+            letter-spacing: 1px;
+            font-family: serif;
+        }
+        .notes_book hr {
+            background-color: gray;
+        }
+        .notes_book h5, p{
+            font-family: serif;
+            color: gray;
+        }
+        .notes_book h3 {
+            font-size: 25px;
+        }
+        .notes_book {
+            margin: 15px;
+        }
         @media screen and (max-width:600px) {
             .footer {
                 padding: 10px;
             }
+            .book_under_notes {
+                padding: 15px;
+            }
+            .me_book_review {
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+                padding: 0px;
+                text-align: center;
+                justify-content: center;
+                width: 100%;
+            }
             .book_page_img {
                 width: 100%;
+            }
+            .notes_book * {
+                margin-left: 0px;
+                margin-right: 0px;
             }
             .middle_book {
                 width: 100%;
@@ -450,12 +504,6 @@
                 margin-bottom: 30px;
             }
             .book_section {
-                /*display: grid;
-                grid-template-rows: repeat(3, 1r);
-                grid-template-columns: repeat(1, 1fr);
-                grid-column-gap: 0px;
-                grid-row-gap: 0px;
-                align-items: center;*/
                 display: flex;
                 flex-direction: column;
                 padding: 30px;

@@ -26,14 +26,21 @@
 	</div>
 	<div class="right_book">
 		<button class="btn btn-outline-secondary my-2"><a href="#">écouter l'episode</a></button>
-		<button class="btn btn-outline-secondary my-2"><a href="{{book.youtube_link}}">regarder en vidéo</a></button>
 		<button class="btn btn-outline-secondary my-2"><a href="#">se procurer l'episode en Ebook</a></button>
 		<button class="btn btn-outline-secondary my-2"><a href="#">Voir les notes</a></button>
 		<hr>
 		<button class="btn btn-outline-secondary my-2" id="essaie"><a href="{{book.amazon_link}}" class="text-white">acheter le livre sur amazon</a></button>
 	</div>
 </section>
-<section>
-	
+<section class="book_under_notes">
+	<div class="me_book_review">
+		<img src="https://pbs.twimg.com/profile_images/1611844886273163265/zzI_v0pO_400x400.jpg">
+		<p>{{book.my_review}}</p>
+	</div>
+	<div class="notes_book">
+		<h1>Mes notes : </h1>
+		<hr>
+		<p>{{book.notes}}</p>
+	</div>
 </section>
 {% endblock %}
